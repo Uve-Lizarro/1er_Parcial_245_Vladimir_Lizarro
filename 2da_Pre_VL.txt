@@ -1,0 +1,7 @@
+Vladimir Ariel Lizarro Velasquezw
+Supervisados:
+•	Algoritmo para Seleccionar Atributos, esto para seleccionar los atributos más relevantes para poder realizar modelos predictivos.
+•	Algoritmo de Probabilidad Condicional, esto para calcular y visualizar las dependencias entre las variables, convertir los valores nominales en atributos para permitir un mejor manejo para algún esquema de aprendizaje.
+No supervisados:
+•	Algoritmo para Normalizar, esto para eliminar los sesgos para mayor precisión en los datos, facilitando la comparación entre todas las características y así logrando una estabilidad numérica.
+•	Algoritmo para Discretizar, esto para convertir las características numéricas en características discretas para reducir simplificar el modelo y reducir la complejidad computacional, además de permitir que el modelo sea más interpretable.
