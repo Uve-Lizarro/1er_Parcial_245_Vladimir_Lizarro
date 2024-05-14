@@ -16,28 +16,21 @@ def primer_Inc():
         next(lector)
         for i in lector:
             datos.append(i)
-
     nroColumnas=len(datos[0])
-
     for i in range(nroColumnas):
         columna=[float(fila[i]) for fila in datos]
         columna.sort()
         for j, fila in enumerate(datos):
             fila[i]=columna[j]
-
     cuartil=[]
     percentil=[]
-
     for i in range(nroColumnas):
         columna=[float(row[i]) for row in datos]
-        num_values=len(columna)
-
-        q3_index=int(0.75*num_values)
+        nroDatos=len(columna)
+        q3_index=int(0.75*nroDatos)
         cuartil.append(columna[q3_index])
-
-        p80_index=int(0.80*num_values)
+        p80_index=int(0.80*nroDatos)
         percentil.append(columna[p80_index])
-
     for i in range(nroColumnas):
         print(f"Columna {i+1}:")
         print(f"Último Cuartil: {cuartil[i]}")
@@ -46,17 +39,14 @@ def primer_Inc():
 def segundo_Inc():
     datos=pd.read_csv(url)
     nroColumnas=len(datos.columns)
-    
     cuartil=[]
     percentil=[]
-
     for i in range(nroColumnas):
         columna=datos.iloc[:, i].values
         q3_index=int(0.75*len(columna))
         cuartil.append(np.percentile(columna, 75))
         p80_index=int(0.80*len(columna))
         percentil.append(np.percentile(columna, 80))
-    
     for i in range(nroColumnas):
         print(f"Columna {i+1}:")
         print(f"Último Cuartil: {cuartil[i]}")
@@ -83,11 +73,10 @@ def cuarto_Inc():
     grafico=pd.read_csv(StringIO(respuesta.text))
     plt.figure(figsize=(10, 6))
     plt.scatter(grafico['Age'], grafico['DiabetesPedigreeFunction'], alpha=0.5)
-    plt.title('Probabilidad de contraer Diabetes por Edades')
+    plt.title('Porcentaje de tener   Diabetes.')
     plt.xlabel('EDAD')
-    plt.ylabel('PROBABILIDAD')
+    plt.ylabel('PORCENTAJE')
     plt.grid(True)
     plt.show()
-
 if __name__ == '__main__':
     cuarto_Inc()
