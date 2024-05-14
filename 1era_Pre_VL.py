@@ -73,7 +73,7 @@ def cuarto_Inc():
     grafico=pd.read_csv(StringIO(respuesta.text))
     plt.figure(figsize=(10, 6))
     plt.scatter(grafico['Age'], grafico['DiabetesPedigreeFunction'], alpha=0.5)
-    plt.title('Porcentaje de tener   Diabetes.')
+    plt.title('Porcentaje de tener Diabetes.')
     plt.xlabel('EDAD')
     plt.ylabel('PORCENTAJE')
     plt.grid(True)
